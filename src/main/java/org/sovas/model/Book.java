@@ -1,5 +1,6 @@
 package org.sovas.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -25,9 +26,11 @@ public class Book {
     private short pagesRead;
 
     @Column
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private double readPercentage;
 
     @Column
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private short pagesRemaining;
 
     // methods

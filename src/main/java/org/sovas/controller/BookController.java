@@ -27,4 +27,11 @@ public class BookController {
     @RequestMapping(value = "/book", method = RequestMethod.GET)
     public @ResponseBody List<Book> getAll() { return bookDao.getAll(); }
 
+
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @RequestMapping(value = "/book/{id}/{pagesRead}", method = RequestMethod.PUT)
+    public @ResponseBody Book updatePagesRead(@PathVariable Long id, @PathVariable short pagesRead) {
+        return bookDao.update(id, pagesRead);
+    }
+
 }

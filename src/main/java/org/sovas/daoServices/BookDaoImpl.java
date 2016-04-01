@@ -20,12 +20,21 @@ public class BookDaoImpl implements BookDao{
     @Override
     public Book add(Book book) {
         log.debug("Book {} saved successfully", book);
+        book.calculateReadPercentage();
+        book.calculatePagesRemaining();
         return bookRepository.save(book);
     }
 
     @Override
-    public Book update(Book book) {
-        return null;
+    public Book update(Long id, short pagesRead) {
+
+        Book book = bookRepository.findOne(id);
+
+        book.setPagesRead(pagesRead);
+        book.calculateReadPercentage();
+        book.calculatePagesRemaining();
+
+        return bookRepository.saveAndFlush(book);
     }
 
     @Override
