@@ -2,14 +2,14 @@ package org.sovas.daoServices;
 
 import org.sovas.model.Book;
 
-import java.util.Set;
+import java.util.List;
 
 /**
  * Created by sowa on 31.03.2016.
  */
 public interface BookDao {
 
-    void add(Book book);
+    Book add(Book book);
 
     Book update(Book book);
 
@@ -17,6 +17,6 @@ public interface BookDao {
 
     Book get(Long id);
 
-    Set<Book> getAll();
+    List<Book> getAll();
 
 }

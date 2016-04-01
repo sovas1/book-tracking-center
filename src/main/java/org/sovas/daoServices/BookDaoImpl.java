@@ -1,16 +1,26 @@
 package org.sovas.daoServices;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.sovas.model.Book;
+import org.sovas.repository.BookRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Set;
+import java.util.List;
 
 @Service
 public class BookDaoImpl implements BookDao{
 
-    @Override
-    public void add(Book book) {
+    private final Logger log = LoggerFactory.getLogger(this.getClass());
 
+    @Autowired
+    private BookRepository bookRepository;
+
+    @Override
+    public Book add(Book book) {
+        log.debug("Book {} saved successfully", book);
+        return bookRepository.save(book);
     }
 
     @Override
@@ -25,12 +35,14 @@ public class BookDaoImpl implements BookDao{
 
     @Override
     public Book get(Long id) {
-        return null;
+        log.debug("Get Book run successfully");
+        return bookRepository.findOne(id);
     }
 
     @Override
-    public Set<Book> getAll() {
-        return null;
+    public List<Book> getAll() {
+        log.debug("Get All Books run successfully");
+        return bookRepository.findAll();
     }
 
 }

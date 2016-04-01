@@ -1,18 +1,30 @@
 package org.sovas.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.sovas.daoServices.BookDao;
+import org.sovas.model.Book;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
-/**
- * Created by sowa on 31.03.2016.
- */
+import java.util.List;
+
+
 @RestController
 public class BookController {
 
-    @RequestMapping(value = "/test", method = RequestMethod.GET)
-    public String test() {
-        return "test";
-    }
+    @Autowired
+    private BookDao bookDao;
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @RequestMapping(value = "/book", method = RequestMethod.POST)
+    public @ResponseBody Book add(@RequestBody Book book) { return bookDao.add(book); }
+
+    @ResponseStatus(HttpStatus.OK)
+    @RequestMapping(value = "/book/{id}", method = RequestMethod.GET)
+    public @ResponseBody Book get(@PathVariable Long id) { return bookDao.get(id); }
+
+    @ResponseStatus(HttpStatus.OK)
+    @RequestMapping(value = "/book", method = RequestMethod.GET)
+    public @ResponseBody List<Book> getAll() { return bookDao.getAll(); }
 
 }
