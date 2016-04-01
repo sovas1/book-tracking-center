@@ -34,12 +34,14 @@ public class BookDaoImpl implements BookDao{
         book.calculateReadPercentage();
         book.calculatePagesRemaining();
 
+        log.debug("Book pagesRead updated successfully to {}", book.getPagesRead());
         return bookRepository.saveAndFlush(book);
     }
 
     @Override
     public void delete(Long id) {
-
+        log.debug("Book deleted successfully");
+        bookRepository.delete(id);
     }
 
     @Override

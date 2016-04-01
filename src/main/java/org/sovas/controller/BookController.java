@@ -34,4 +34,8 @@ public class BookController {
         return bookDao.update(id, pagesRead);
     }
 
+    @ResponseStatus(HttpStatus.GONE)
+    @RequestMapping(value = "/book/{id}", method = RequestMethod.DELETE)
+    public void delete(@PathVariable Long id) { bookDao.delete(id); }
+
 }
