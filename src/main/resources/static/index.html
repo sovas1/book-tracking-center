@@ -10,13 +10,19 @@
     <link rel="stylesheet" href="css/clouds.css" />
 </head>
 
-<body>
+<body ng-controller="mainController">
 
-<h1>TEST</h1>
+<animated-clouds></animated-clouds>
+
+<header-and-nav-bar></header-and-nav-bar>
+
+<all-buttons></all-buttons>
 
 
-
-
+<div id="main">
+    <div ng-view></div>
+    <!-- angular templating -->
+</div>
 
 
 <!-- BOWER COMPONENTS -->
@@ -24,6 +30,30 @@
 <script type="text/javascript" src="./bower_components/angular/angular.min.js"></script>
 <script type="text/javascript" src="./bower_components/angular-resource/angular-resource.min.js"></script>
 <script type="text/javascript" src="./bower_components/angular-resource/angular-route.min.js"></script>
+
+
+<!-- MAIN SCRIPTS -->
+
+<script type="text/javascript" src="app/script.js"></script>
+
+<script type="text/javascript" src="app/routes/routes.js"></script>
+<script type="text/javascript" src="app/routes/customDirectives.js"></script>
+
+<script type="text/javascript" src="app/controllers/navBarController.js"></script>
+<script type="text/javascript" src="app/controllers/modelController.js"></script>
+
+
+<!-- CONTROLLERS -->
+
+<script type="text/javascript" src="app/controllers/book/add.js"></script>
+<script type="text/javascript" src="app/controllers/book/search.js"></script>
+
+
+<!-- SERVICES -->
+
+<script type="text/javascript" src="app/services/book/add.js"></script>
+<script type="text/javascript" src="app/services/book/search.js"></script>
+
 
 </body>
 </html>
