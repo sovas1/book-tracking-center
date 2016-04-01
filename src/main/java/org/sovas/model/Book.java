@@ -36,4 +36,8 @@ public class Book {
         readPercentage = ( (double) pagesRead / (double) pages ) * 100.0;
     }
 
+    public void calculatePagesRemaining() {
+
+    }
+
 }

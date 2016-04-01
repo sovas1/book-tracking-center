@@ -17,11 +17,17 @@ public class ModelTest {
         book.setPagesRead((short) 200);
 
         book.calculateReadPercentage();
+        book.calculatePagesRemaining();
     }
 
     @Test
-    public void testBookReadPercentageCalculations() {
+    public void testBookReadPercentageCalculator() {
         Assert.assertEquals(20.0, book.getReadPercentage(), 0.0);
+    }
+
+    @Test
+    public void testBookPagesRemainingCalculator() {
+        Assert.assertEquals(800, book.getPagesRemaining(), 0.0);
     }
 
 }
