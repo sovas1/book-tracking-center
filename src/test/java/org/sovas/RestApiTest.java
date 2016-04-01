@@ -71,7 +71,7 @@ public class RestApiTest {
     @Test
     public void testDelete() throws Exception {
         mockMvc.perform(delete("/book/" + book.getId()))
-                .andExpect(status().isNoContent());
+                .andExpect(status().isGone());
     }
 
 
