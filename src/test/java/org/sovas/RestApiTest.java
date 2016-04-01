@@ -13,8 +13,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 public class RestApiTest {
@@ -52,20 +51,28 @@ public class RestApiTest {
 
     @Test
     public void testGet() throws Exception {
-        System.out.println(book.getId());
         mockMvc.perform(get("/book/" + book.getId()))
-                .andExpect(status().isOk())
-                .andReturn();
+                .andExpect(status().isOk());
     }
 
     @Test
     public void testGetAll() throws Exception {
         mockMvc.perform(get("/book"))
-                .andExpect(status().isOk())
-                .andReturn();
+                .andExpect(status().isOk());
     }
 
+    @Test
+    public void testUpdatePagesRead() throws Exception {
+        short newPagesRead = 500;
+        mockMvc.perform(put("/book/" + book.getId() + "/" + newPagesRead ))
+                .andExpect(status().isAccepted());
+    }
 
+    @Test
+    public void testDelete() throws Exception {
+        mockMvc.perform(delete("/book/" + book.getId()))
+                .andExpect(status().isNoContent());
+    }
 
 
     // methods
