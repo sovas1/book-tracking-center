@@ -15,6 +15,8 @@ public class ModelTest {
 
         book.setPages((short) 1000);
         book.setPagesRead((short) 200);
+
+        book.calculateReadPercentage();
     }
 
     @Test

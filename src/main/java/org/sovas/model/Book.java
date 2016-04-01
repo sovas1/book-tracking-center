@@ -32,8 +32,8 @@ public class Book {
 
     // methods
 
-    public void readPercentageCalculator() {
-
+    public void calculateReadPercentage() {
+        readPercentage = ( (double) pagesRead / (double) pages ) * 100.0;
     }
 
 }
