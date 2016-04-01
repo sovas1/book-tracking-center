@@ -37,7 +37,7 @@ public class Book {
     }
 
     public void calculatePagesRemaining() {
-
+        pagesRemaining = (short) (pages - pagesRead);
     }
 
 }
