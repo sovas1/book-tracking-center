@@ -25,10 +25,15 @@ public class Book {
     private short pagesRead;
 
     @Column
-    private byte readPercentage;
+    private double readPercentage;
 
     @Column
     private short pagesRemaining;
 
+    // methods
+
+    public void readPercentageCalculator() {
+
+    }
 
 }
