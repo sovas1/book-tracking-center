@@ -1,7 +1,95 @@
 <!-- search.html -->
-<div class="jumbotron text-center">
-    <h1>Company put Page</h1>
 
-    <p>{{ message }}</p>
+<!--  **********  SEARCH FORM  **********  -->
+<div class="section" ng-init="searchBook()">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+
+                <form>
+
+                    <div class="form-group">
+                        <label for="titleInput" class="control-label">Search Form</label>
+                        <input type="text" ng-model="searchText" class="form-control" id="titleInput"
+                               placeholder="search text ..."
+                               minlength="1" maxlength="99" required>
+                    </div>
+
+                </form>
+
+            </div>
+
+            <div class="col-md-2"></div>
+        </div>
+
+    </div>
 </div>
 
+
+<!--  **********  TABLE  **********  -->
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-0"></div>
+            <div class="col-md-12">
+
+                <br>
+                <hr>
+
+                <table class="table table-bordered" id="searchTextResult">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th class="alnright">Author</th>
+                        <th class="alnright">Title</th>
+                        <th class="alnright">Pages</th>
+                        <th class="alnright">On Page</th>
+                        <th class="alnright">Progress Bar</th>
+                        <th class="alnright">Options</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="book in books | filter:searchText">
+                        <td>{{ book.id}}</td>
+                        <td class="alnright">{{ book.author}}</td>
+                        <td class="alnright">{{ book.title}}</td>
+                        <td class="alnright">{{ book.pages}}</td>
+                        <td class="alnright">{{ book.pagesRead}}</td>
+                        <td class="alnright">
+                            <!-- *** PROGRESS BAR *** -->
+                            <div class="progress alnright">
+                                <div class="progress-bar progress-bar-info progress-bar-striped active blacktxt"
+                                     role="progressbar"
+                                     aria-valuenow={{book.readPercentage}}
+                                     aria-valuemin="0" aria-valuemax="100"
+                                     style="width:{{book.readPercentage}}%">{{book.readPercentage}}%
+                                </div>
+                            </div>
+                        </td>
+                        <td class="alnright">
+                           Edit / Delete
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+                <hr>
+
+            </div>
+            <div class="col-md-0"></div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    .alnright {
+        text-align: right;
+    }
+
+    .blacktxt {
+        color: #000;
+    }
+</style>

@@ -1,63 +1,55 @@
-<body>
+<!-- add.html -->
+
+<!--  **********  ADD FORM  **********  -->
 <div class="section">
     <div class="container">
         <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
 
-                <form class="form-horizontal" role="form">
+                <form>
 
                     <div class="form-group">
-                        <div class="col-sm-3">
-                            <label for="authorInput" class="control-label">Author<br><br></label>
-                        </div>
-                        <div class="col-sm-9">
-                            <input type="text" ng-model="author" class="form-control" id="authorInput" placeholder="author full name"
-                            minlength="1" maxlength="99" required>
-                        </div>
+                        <label for="authorInput" class="control-label">Author</label>
+                        <input type="text" ng-model="author" class="form-control" id="authorInput"
+                               placeholder="author full name"
+                               minlength="1" maxlength="99" required>
                     </div>
 
                     <div class="form-group">
-                        <div class="col-sm-3">
-                            <label for="titleInput" class="control-label">Title<br><br></label>
-                        </div>
-                        <div class="col-sm-9">
-                            <input type="text" ng-model="title" class="form-control" id="titleInput" placeholder="book title"
-                                   minlength="1" maxlength="99" required>
-                        </div>
+                        <label for="titleInput" class="control-label">Title</label>
+                        <input type="text" ng-model="title" class="form-control" id="titleInput"
+                               placeholder="book title"
+                               minlength="1" maxlength="99" required>
                     </div>
 
                     <div class="form-group">
-                        <div class="col-sm-3">
-                            <label for="pagesInput" class="control-label">Pages Total<br><br></label>
-                        </div>
-                        <div class="col-sm-9">
-                            <input type="number" ng-model="pages" class="form-control" id="pagesInput" placeholder="total number of pages"
-                                   min="0" max="9999" required>
-                        </div>
+                        <label for="pagesInput" class="control-label">Pages Total</label>
+                        <input type="number" ng-model="pages" class="form-control" id="pagesInput"
+                               placeholder="total number of pages"
+                               min="0" max="9999" required>
                     </div>
 
                     <div class="form-group">
-                        <div class="col-sm-3">
-                            <label for="pagesReadInput" class="control-label">Pages Read<br><br></label>
-                        </div>
-                        <div class="col-sm-9">
-                            <input type="number" ng-model="pagesRead" class="form-control" id="pagesReadInput" placeholder="actual page"
-                                   min="0" max="9999" required>
-                        </div>
+                        <label for="pagesReadInput" class="control-label">Pages Read</label>
+                        <input type="number" ng-model="pagesRead" class="form-control" id="pagesReadInput"
+                               placeholder="actual page"
+                               min="0" max="9999" required>
                     </div>
+
                 </form>
 
+                <br>
                 <div class="form-group text-center">
-                    <button type="submit" ng-click="addBook()" class="btn btn-block btn-warning text-center">Confirm</button>
+                    <button type="submit" ng-click="addBook()" class="btn btn-block btn-warning text-center">Confirm
+                    </button>
                 </div>
 
             </div>
 
-            <div class="col-md-3"></div>
+            <div class="col-md-2"></div>
         </div>
 
 
     </div>
 </div>
-</body>

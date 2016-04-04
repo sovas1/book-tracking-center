@@ -1,12 +1,10 @@
 (function () {
     
-    angular.module('models-controller')
+    angular.module('model-controller')
         .factory('bookSearchService', function ($http) {
             return {
-                SearchCompany : function (id, name) {
-                    return $http.get('book/', {
-                        // TODO implement search logic
-                    })
+                GetAll : function () {
+                    return $http.get('book/');
                 }
             }
         });

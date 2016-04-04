@@ -6,7 +6,12 @@
 
             $scope.searchBook = function searchBook() {
 
-                // TODO make request to service
+                bookSearchService.GetAll()
+                    .success(function (response) {
+                        $scope.books = response;
+                    }).error(function () {
+                    alert("Error occurred");
+                });
 
             };
             

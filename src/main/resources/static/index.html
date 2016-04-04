@@ -7,22 +7,28 @@
     <base href="/">
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/bootstrap/font-awesome-4.5.0/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="css/clouds.css" />
+    <link rel="stylesheet" href="css/background/css/style.css"/>
 </head>
 
 <body ng-controller="mainController">
 
-<animated-clouds></animated-clouds>
+<animated-background></animated-background>
 
-<header-and-nav-bar></header-and-nav-bar>
+<div id="page-wrap" >
 
-<all-buttons></all-buttons>
+    <div class="col-md-12 text-center">
+        <h1>Book Tracking Center</h1>
+    </div>
 
+    <all-buttons></all-buttons>
 
-<div id="main">
-    <div ng-view></div>
-    <!-- angular templating -->
+    <div id="main">
+        <div ng-view></div>
+        <!-- angular templating -->
+    </div>
+
 </div>
+
 
 
 <!-- BOWER COMPONENTS -->

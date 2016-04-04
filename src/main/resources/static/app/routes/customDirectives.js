@@ -10,18 +10,11 @@
             templateUrl: "pages/index_content/allButtons.html"
         };
     })
-    
-    .directive('headerAndNavBar', function () {
-        return {
-            restrict: 'E',
-            templateUrl: "pages/index_content/headerAndNavBar.html"
-        };
-    })
 
-    .directive('animatedClouds', function () {
+    .directive('animatedBackground', function () {
         return {
             restrict: 'E',
-            templateUrl: "pages/index_content/animatedClouds.html"
+            templateUrl: "pages/index_content/animatedBackground.html"
         };
     });
 

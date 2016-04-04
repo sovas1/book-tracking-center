@@ -3,9 +3,12 @@
     angular.module('model-controller')
         .factory('bookAddService', function ($http) {
             return {
-                AddBook : function (name) {
+                AddBook : function (aut, tit, pag, pagR) {
                     return $http.post('book/', {
-                        // TODO implement post logic
+                        author    : aut,
+                        title     : tit,
+                        pages     : pag,
+                        pagesRead : pagR
                     })
                 }
             }

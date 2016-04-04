@@ -1,12 +1,23 @@
 (function () {
 
-    angular.module('models-controller')
-        .controller('bookAddService', function ($scope, bookAddService) {
+    angular.module('model-controller')
+        .controller('bookAddController', function ($scope, bookAddService) {
             $scope.message = 'post book';
 
             $scope.addBook = function addBook() {
                 
-                // TODO make request to service
+                var aut  = $scope.author;
+                var tit  = $scope.title;
+                var pag  = $scope.pages;
+                var pagR = $scope.pagesRead;
+
+                bookAddService.AddBook(aut,tit,pag,pagR)
+                    .success(function() {
+                        alert("Book added");
+                    })
+                    .error(function() {
+                    alert("Error occurred");
+                });
 
             };
         })
