@@ -19,7 +19,7 @@ public class BookDaoImpl implements BookDao{
 
     @Override
     public Book add(Book book) {
-        log.debug("Book {} saved successfully", book);
+        log.debug("Book saved successfully");
         book.calculateReadPercentage();
         book.calculatePagesRemaining();
         return bookRepository.save(book);
